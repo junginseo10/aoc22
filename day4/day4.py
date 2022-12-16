@@ -45,44 +45,6 @@ def find_overlap(str):
     a = set(range(a1,a2+1))
     b = set(range(b1,b2+1))
     return len(a & b) != 0
- 
- 
-                        
-def split_list(string_list):
-    half = len(string_list) // 2
-    return string_list[:half], string_list[half:]
-
-
-def find_common_char(strings):
-    
-    # Initialize a set to store the unique characters
-    common_chars = set(strings[0])
-    
-    # Iterate over the lists
-    for str in strings[1:]:
-        common_chars &= set(str)
-
-    # Assert that there is only one common character
-    assert len(common_chars) == 1, "There are multiple common characters"
-    
-    # Return the only common character
-    return next(iter(common_chars))
-
-
-def get_char_index(char):
-   
-    # Get the ASCII value of the character
-    ascii_value = ord(char)
-
-    # Check if the character is a lowercase letter
-    if ascii_value >= 97 and ascii_value <= 122:
-        # Return the index of the lowercase letter (1-26)
-        return ascii_value - 96
-
-    # Check if the character is an uppercase letter
-    if ascii_value >= 65 and ascii_value <= 90:
-        # Return the index of the uppercase letter (27-52)
-        return ascii_value - 38
 
 
 if __name__ == "__main__":
